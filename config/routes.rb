@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  # devise_scope :user do
-  #   get 'users/sign_out', to: 'devise/sessions#destroy'
-  # end
+  
   devise_for :users
-  resources :users, only: %i[index] do
+  resources :users, only: [:index] do
     member do
       post :follow, to: 'follows#create'
       delete :unfollow, to: 'follows#destroy'

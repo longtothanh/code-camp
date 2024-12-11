@@ -15,9 +15,9 @@
             tr
               th Title
               th Content
+              th Review
           tbody.js-list-book-content
             = render partial: 'list_book_content', collection: @books, as: :book
-
       - else
         p.text-center No products found.
 javascript:
