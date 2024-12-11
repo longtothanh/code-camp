@@ -6,7 +6,13 @@ h1 All Users
         li = user.email
         - if current_user.following.include?(user)
             = button_to 'Unfollow', unfollow_user_path(user), method: :delete, class: 'btn btn-danger'
-        - else 
+        - else
             = button_to 'Follow', follow_user_path(user), method: :post, class: 'btn btn-success'
+  - if @notifications.present?
+    ol
+      - @notifications.each do |notification|
+        li style = "display: flex, justify-content: space-between"
+          = notification.message
+        p = "(#{notification.created_at.to_formatted_s(:long)})"
 - else
   p No users found

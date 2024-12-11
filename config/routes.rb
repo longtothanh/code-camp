@@ -9,6 +9,9 @@ Rails.application.routes.draw do
       delete :unfollow, to: 'follows#destroy'
     end
   end
+
+  resources :notifications, only: [:index]
+
   root "home#index"
   get 'ajax_search_books', to: 'home#ajax_search_books'
 
