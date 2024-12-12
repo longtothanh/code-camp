@@ -1,5 +1,5 @@
 class FollowsController < ApplicationController
-    before_action :authenticate_user! # Devise bảo vệ controller
+    before_action :authenticate_user!
 
     def create
         user_to_follow = User.find(params[:id])

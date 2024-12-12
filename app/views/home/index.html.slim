@@ -2,6 +2,7 @@
   .row.justify-content-center
     .col-md-8
       h1.text-center Book Search
+      = render "/components/shared"
 
       = form_with url: '', method: :get, local: true, class: "mb-4" do |f|
         .input-group
@@ -15,11 +16,13 @@
             tr
               th Title
               th Content
-              th Review
+              th
+              th
           tbody.js-list-book-content
             = render partial: 'list_book_content', collection: @books, as: :book
       - else
         p.text-center No products found.
+      = link_to "New book", new_book_path, class: "btn btn-success"
 javascript:
   function debounce(func, timeout = 500) {
     let timer;

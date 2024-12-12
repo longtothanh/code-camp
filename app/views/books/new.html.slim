@@ -1,0 +1,11 @@
+h1 Create new book
+
+.container.mt-5
+  .row.justify-content-center
+    .col-md-8
+      = form_with model: [@book], local: false do |form|
+        = form.label :Title
+        = form.text_field :title, placeholder: "Write your title of book here", class: "form-control"
+        = form.label :Content
+        = form.text_area :content, placeholder: "Write your content of book here", class: "form-control"
+        = form.submit "Submit", class: "btn btn-primary"
