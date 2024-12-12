@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users
   resources :users, only: [:index] do
     member do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'ajax_search_books', to: 'home#ajax_search_books'
 
   resources :books do
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:create, :show]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
